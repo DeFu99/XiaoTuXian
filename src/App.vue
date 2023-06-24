@@ -14,6 +14,7 @@
 				<RouterLink to="/about">About</RouterLink>
 			</nav>
 		</div>
+		<el-button type="primary">Primary</el-button>
 	</header>
 	<RouterView />
 </template>

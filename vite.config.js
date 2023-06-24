@@ -16,12 +16,24 @@ export default defineConfig({
 			resolvers: [ElementPlusResolver()],
 		}),
 		Components({
-			resolvers: [ElementPlusResolver()],
+			resolvers: [
+				// 配置sass颜色样式
+				ElementPlusResolver({ importStyle: "sass" }),
+			],
 		}),
 	],
 	resolve: {
 		alias: {
 			"@": fileURLToPath(new URL("./src", import.meta.url)),
+		},
+	},
+	// vite的配置
+	css: {
+		preprocessorOptions: {
+			scss: {
+				// 自动导入定制化样式文件进行样式覆盖
+				additionalData: `@use "@/styles/element/index.scss" as *;`,
+			},
 		},
 	},
 });
