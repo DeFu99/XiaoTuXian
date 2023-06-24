@@ -1,7 +1,6 @@
 <template>
 	<!-- 一级路由出口 -->
 	<router-view></router-view>
-	<p class="text">nihao</p>
 </template>
 
 <script setup>
@@ -9,9 +8,6 @@
 </script>
 
 <style scoped lang="scss">
-	.text{
-		color: $sucColor;
-	}
 
 	header {
 		line-height: 1.5;
