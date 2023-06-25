@@ -1,6 +1,7 @@
 <template>
 	<div class="home-category">
 		<ul class="menu">
+			<!-- 渲染数据 -->
 			<li v-for="item in categoryStore.categoryList" :key="item.id">
 				<RouterLink to="/">{{ item.name }}</RouterLink>
 				<RouterLink v-for="i in item.children.slice(0, 2)" :key="i.id" to="/">
