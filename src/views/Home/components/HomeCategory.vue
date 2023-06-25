@@ -13,7 +13,7 @@
 					<ul>
 						<li v-for="i in item.goods" :key="i.id">
 							<RouterLink to="/">
-								<img :src="i.picture"  />
+								<img :src="i.picture" />
 								<div class="info">
 									<p class="name ellipsis-2">{{ i.name }}</p>
 									<p class="desc ellipsis">{{ i.desc }}</p>

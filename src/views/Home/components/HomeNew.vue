@@ -38,11 +38,12 @@
 			background: #f0f9f4;
 			transition: all 0.5s;
 
+			// &相当于上一级
 			&:hover {
-				transform: translate3d(0, -3px, 0);
+				transform: translate3d(0, -6px, 0);
 				box-shadow: 0 3px 8px rgb(0 0 0 / 20%);
 			}
-
+			
 			img {
 				width: 306px;
 				height: 306px;
