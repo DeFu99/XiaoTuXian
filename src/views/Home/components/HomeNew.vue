@@ -3,7 +3,7 @@
 		<ul class="goods-list">
 			<li v-for="item in newList" :key="item.id">
 				<RouterLink to="/">
-					<img :src="item.picture" />
+					<img v-img-lazy="item.picture" />
 					<p class="name">{{ item.name }}</p>
 					<p class="price">&yen;{{ item.price }}</p>
 				</RouterLink>
@@ -43,7 +43,7 @@
 				transform: translate3d(0, -6px, 0);
 				box-shadow: 0 3px 8px rgb(0 0 0 / 20%);
 			}
-			
+
 			img {
 				width: 306px;
 				height: 306px;

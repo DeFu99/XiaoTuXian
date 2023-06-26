@@ -3,7 +3,7 @@
 		<ul class="goods-list">
 			<li v-for="item in hotList" :key="item.id">
 				<RouterLink to="/">
-					<img :src="item.picture" />
+					<img v-img-lazy="item.picture"  />
 					<p class="name">{{ item.title }}</p>
 					<p class="desc">{{ item.alt }}</p>
 				</RouterLink>
