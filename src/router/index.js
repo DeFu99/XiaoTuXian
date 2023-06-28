@@ -9,11 +9,13 @@ const router = createRouter({
 			component: () => import("@/views/Layout/index.vue"),
 			children:[
 				{
+					// 首页
 					path:'',
 					name:'home',
 					component:() => import('@/views/Home/index.vue')
 				},
 				{
+					// 类别
 					path:'/category/:id',
 					name:'category',
 					component:() => import('@/views/Category/index.vue')

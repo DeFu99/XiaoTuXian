@@ -6,22 +6,14 @@ export function getBannerAPI(params = {}) {
 	return httpInstance({
 		url: "home/banner",
 		params: {
-			distributionSite
+			distributionSite,
 		},
 	});
 }
 
 // 获取新鲜好物
-export const findNewAPI = () => {
-	return httpInstance({ url: "/home/new" });
-};
-
+export const findNewAPI = () => httpInstance({ url: "/home/new" });
 // 获取人气推荐
-export const getHotAPI = () => {
-	return httpInstance({ url: "home/hot" });
-};
-
+export const getHotAPI = () => httpInstance({ url: "home/hot" });
 // 获取产品
-export const getGoodsAPI = () => {
-	return httpInstance({ url: "/home/goods" });
-};
+export const getGoodsAPI = () => httpInstance({ url: "/home/goods" });
