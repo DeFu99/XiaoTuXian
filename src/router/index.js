@@ -15,10 +15,16 @@ const router = createRouter({
 					component:() => import('@/views/Home/index.vue')
 				},
 				{
-					// 类别
+					// 类别(一级路由)
 					path:'/category/:id',
 					name:'category',
 					component:() => import('@/views/Category/index.vue')
+				},
+				{
+					// 类别(二级路由)
+					path:'category/sub/:id',
+					name:'subCategory',
+					component:() => import('@/views/SubCategory/index.vue')
 				},
 
 			]

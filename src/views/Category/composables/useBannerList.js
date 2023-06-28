@@ -11,7 +11,7 @@ export const useBannerList = () => {
 		});
 		bannerList.value = res.result;
 	};
-	onMounted(() => getBanner());
+	onMounted(() => getBanner());   
 	return {
 		bannerList,
 	};
