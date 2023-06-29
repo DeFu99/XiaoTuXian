@@ -20,7 +20,7 @@
 					<div class="goods-info">
 						<div class="media">
 							<!-- 图片预览区 -->
-
+							<ImageView></ImageView>
 							<!-- 统计数量 -->
 							<ul class="goods-sales">
 								<li>
@@ -98,7 +98,8 @@
 										v-for="img in goods.details?.pictures"
 										:src="img"
 										:key="img"
-										alt="" />
+										alt=""
+									/>
 								</div>
 							</div>
 						</div>
@@ -119,6 +120,7 @@
 	import { onMounted, ref } from "vue";
 	import { useRoute } from "vue-router";
 	import DetailHot from "@/views/Detail/components/DetailHot.vue";
+	import ImageView from "@/components/ImageView/index.vue";
 
 	// 商品详情
 	const goods = ref({});
