@@ -16,7 +16,7 @@ const router = createRouter({
 				},
 				{
 					// 类别(一级路由)
-					path: "/category/:id",
+					path: "category/:id",
 					name: "category",
 					component: () => import("@/views/Category/index.vue"),
 				},
@@ -25,6 +25,12 @@ const router = createRouter({
 					path: "category/sub/:id",
 					name: "subCategory",
 					component: () => import("@/views/SubCategory/index.vue"),
+				},
+				{
+					// 商品详情路由
+					path: "detail/:id",
+					name: "detail",
+					component: () => import("@/views/Detail/index.vue"),
 				},
 			],
 		},
