@@ -1,3 +1,3 @@
-import httpInstance from "@/untils/http";
+import request from "@/untils/http";
 
-export const getCategoryAPI = () => httpInstance({ url: "/home/category/head" });
+export const getCategoryAPI = () => request({ url: "/home/category/head" });
