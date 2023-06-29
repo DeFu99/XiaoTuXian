@@ -7,27 +7,26 @@ const router = createRouter({
 			path: "/",
 			name: "layout",
 			component: () => import("@/views/Layout/index.vue"),
-			children:[
+			children: [
 				{
 					// 首页
-					path:'',
-					name:'home',
-					component:() => import('@/views/Home/index.vue')
+					path: "",
+					name: "home",
+					component: () => import("@/views/Home/index.vue"),
 				},
 				{
 					// 类别(一级路由)
-					path:'/category/:id',
-					name:'category',
-					component:() => import('@/views/Category/index.vue')
+					path: "/category/:id",
+					name: "category",
+					component: () => import("@/views/Category/index.vue"),
 				},
 				{
 					// 类别(二级路由)
-					path:'category/sub/:id',
-					name:'subCategory',
-					component:() => import('@/views/SubCategory/index.vue')
+					path: "category/sub/:id",
+					name: "subCategory",
+					component: () => import("@/views/SubCategory/index.vue"),
 				},
-
-			]
+			],
 		},
 		{
 			path: "/login",
@@ -35,6 +34,10 @@ const router = createRouter({
 			component: () => import("@/views/Login/index.vue"),
 		},
 	],
+	// 路由滚动行为定制
+	scrollBehavior() {
+		return { top: 0 };
+	},
 });
 
 export default router;
