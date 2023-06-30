@@ -20,7 +20,7 @@
 					<div class="goods-info">
 						<div class="media">
 							<!-- 图片预览区 -->
-							<ImageView :imageList="goods.mainPictures"></ImageView>
+							<XtxImageView :imageList="goods.mainPictures"></XtxImageView>
 							<!-- 统计数量 -->
 							<ul class="goods-sales">
 								<li>
@@ -69,7 +69,7 @@
 								</dl>
 							</div>
 							<!-- sku组件 -->
-
+							<XtxSku :goods="goods" @change="skuChange"></XtxSku>
 							<!-- 数据组件 -->
 
 							<!-- 按钮组件 -->
@@ -120,7 +120,7 @@
 	import { onMounted, ref } from "vue";
 	import { useRoute } from "vue-router";
 	import DetailHot from "@/views/Detail/components/DetailHot.vue";
-	import ImageView from "@/components/ImageView/index.vue";
+	
 
 	// 商品详情
 	const goods = ref({});
@@ -130,6 +130,9 @@
 		goods.value = res.result;
 	};
 	onMounted(() => getGoods());
+
+	// sku规格被操作时
+	const skuChange = sku => console.log(sku);
 </script>
 
 <style scoped lang="scss">
