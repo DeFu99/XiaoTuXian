@@ -17,7 +17,7 @@
 				</el-carousel>
 			</div>
 		</div>
-		<!-- 分类数据 -->
+		<!-- 商品分类 -->
 		<div class="sub-list">
 			<h3>全部分类</h3>
 			<ul>
@@ -29,6 +29,8 @@
 				</li>
 			</ul>
 		</div>
+
+		<!-- 商品展示 -->
 		<div class="ref-goods" v-for="item in categoryData.children" :key="item.id">
 			<div class="head">
 				<h3>- {{ item.name }}-</h3>

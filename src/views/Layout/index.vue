@@ -2,7 +2,8 @@
 	<LayoutFixed />
 	<LayoutNav />
 	<LayoutHeader />
-	<RouterView />
+	<!-- 二级路由出口 -->
+	<router-view></router-view>
 	<LayoutFooter />
 </template>
 
