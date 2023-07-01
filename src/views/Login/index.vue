@@ -65,10 +65,13 @@
 
 <script setup>
 	import { ref } from "vue";
-	import { loginApi } from "@/apis/user";
 	import { ElMessage } from "element-plus";
 	import "element-plus/theme-chalk/el-message.css";
 	import { useRouter } from "vue-router";
+	
+	import { useUserStore } from "@/stores/user";
+	const userStore = useUserStore();
+
 	// 准备表单数据对象
 	const form = ref({
 		account: "",
@@ -106,8 +109,7 @@
 			console.log(valid);
 			if (valid) {
 				// 执行表单登录逻辑
-				const res = await loginApi({ account, password });
-				console.log(res);
+				await userStore.getUserInfo({ account, password });
 				// 提示用户
 				ElMessage({ type: "success", message: "登录成功" });
 				// 跳转首页
