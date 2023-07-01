@@ -2,6 +2,7 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
 import { loginApi } from "@/apis/user";
+
 // 用户登录数据存储
 export const useUserStore = defineStore(
 	"user",
@@ -12,9 +13,12 @@ export const useUserStore = defineStore(
 			const res = await loginApi({ account, password });
 			userInfo.value = res.result;
 		};
+		// 退出时清除用户信息
+		const clearUserInfo = () => (userInfo.value = {});
 		return {
 			userInfo,
 			getUserInfo,
+			clearUserInfo,
 		};
 	},
 	{

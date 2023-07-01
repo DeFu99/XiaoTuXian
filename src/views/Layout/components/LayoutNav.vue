@@ -2,15 +2,18 @@
 	<nav class="app-topnav">
 		<div class="container">
 			<ul>
-				<template v-if="false">
+				<template v-if="userStore.userInfo.token">
 					<li>
-						<a href="javascript:;"><i class="iconfont icon-user"></i>周杰伦</a>
+						<a href="javascript:;">
+							<i class="iconfont icon-user"></i>{{ userStore.userInfo.account }}
+						</a>
 					</li>
 					<li>
 						<el-popconfirm
 							title="确认退出吗?"
 							confirm-button-text="确认"
 							cancel-button-text="取消"
+							@confirm="confirm"
 						>
 							<template #reference>
 								<a href="javascript:;">退出登录</a>
@@ -20,6 +23,7 @@
 					<li><a href="javascript:;">我的订单</a></li>
 					<li><a href="javascript:;">会员中心</a></li>
 				</template>
+
 				<template v-else>
 					<li><a href="javascript:;" @click="$router.push('/login')">请先登录</a></li>
 					<li><a href="javascript:;">帮助中心</a></li>
@@ -30,7 +34,17 @@
 	</nav>
 </template>
 
-<script setup></script>
+<script setup>
+	import router from "@/router";
+	import { useUserStore } from "@/stores/user";
+	const userStore = useUserStore();
+	// console.log(userStore.userInfo);
+	// 退出登录，点击退出
+	const confirm = () => {
+		userStore.clearUserInfo();
+		router.push("/login");
+	};
+</script>
 
 <style scoped lang="scss">
 	.app-topnav {
