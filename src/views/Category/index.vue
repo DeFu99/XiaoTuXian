@@ -17,8 +17,8 @@
 				</el-carousel>
 			</div>
 		</div>
-		<!-- 商品分类 -->
 
+		<!-- 商品分类 -->
 		<div class="sub-list">
 			<h3>全部分类</h3>
 			<ul>
