@@ -3,7 +3,7 @@ import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 
-// 按需引入组件库
+// 按需引入element plus组件库
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
@@ -19,7 +19,7 @@ export default defineConfig({
 		}),
 		Components({
 			resolvers: [
-				// 配置sass颜色样式
+				// 通知element plus使用sass样式
 				ElementPlusResolver({ importStyle: "sass" }),
 			],
 		}),
@@ -39,21 +39,22 @@ export default defineConfig({
 			],
 		}),
 	],
-	resolve: {
-		alias: {
-			"@": fileURLToPath(new URL("./src", import.meta.url)),
-		},
-	},
 	// vite的配置
 	css: {
 		preprocessorOptions: {
 			scss: {
-				// 自动导入定制化样式文件进行样式覆盖
+				// 自动导入scss的定制化样式文件，对原element plus样式进行覆盖
 				additionalData: `
 				@use "@/styles/element/index.scss" as *;
 				@use "@/styles/var.scss" as *;
 				`,
 			},
+		},
+	},
+	resolve: {
+		// "别名"，实际@路径的转化
+		alias: {
+			"@": fileURLToPath(new URL("./src", import.meta.url)),
 		},
 	},
 });

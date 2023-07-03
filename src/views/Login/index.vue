@@ -29,10 +29,10 @@
 							status-icon
 						>
 							<el-form-item label="账户" prop="account">
-								<el-input v-model="form.account" />
+								<el-input v-model="form.account" clearable />
 							</el-form-item>
 							<el-form-item label="密码" prop="password">
-								<el-input v-model="form.password" />
+								<el-input v-model="form.password" clearable />
 							</el-form-item>
 							<el-form-item label-width="22px" prop="agree">
 								<el-checkbox size="large" v-model="form.agree">
@@ -46,6 +46,7 @@
 			</div>
 		</section>
 
+		<!-- 底部信息 -->
 		<footer class="login-footer">
 			<div class="container">
 				<p>
@@ -68,7 +69,7 @@
 	import { ElMessage } from "element-plus";
 	import "element-plus/theme-chalk/el-message.css";
 	import { useRouter } from "vue-router";
-	
+
 	import { useUserStore } from "@/stores/user";
 	const userStore = useUserStore();
 
@@ -80,24 +81,22 @@
 	});
 	// 准备规则对象
 	const rules = ref({
-		account: [{ required: true, message: "用户名不能为空", trigger: "blur" }],
+		account: { required: true, message: "用户名不能为空", trigger: "blur" },
 		password: [
 			{ required: true, message: "密码不能为空", trigger: "blur" },
 			{ min: 6, max: 12, message: "密码为6——12个字符", trigger: "blur" },
 		],
-		agree: [
-			{
-				validator: (rule, value, callback) => {
-					// console.log(value);
-					// 自定义校验，勾选就通过
-					if (value) {
-						callback();
-					} else {
-						callback(new Error("请勾选协议"));
-					}
-				},
+		agree: {
+			validator: (rule, value, callback) => {
+				// console.log(value);
+				// 自定义校验，勾选就通过
+				if (value) {
+					callback();
+				} else {
+					callback(new Error("请勾选协议"));
+				}
 			},
-		],
+		},
 	});
 
 	// 获取form实例做统一校验
