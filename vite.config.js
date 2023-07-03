@@ -8,7 +8,7 @@ import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
-// 不用每次都导入ref，onmounted等
+
 
 // https://vitejs.dev/config/
 export default defineConfig({

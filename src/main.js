@@ -7,7 +7,7 @@ import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
 import App from "./App.vue";
 import router from "./router";
 
-// 引入初始化样式文件
+// 初始化样式
 import "@/styles/common.scss";
 
 // 引入懒加载指令

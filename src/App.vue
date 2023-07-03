@@ -3,12 +3,9 @@
 	<router-view></router-view>
 </template>
 
-<script setup>
-	
-</script>
+<script setup></script>
 
 <style scoped lang="scss">
-
 	header {
 		line-height: 1.5;
 		max-height: 100vh;
