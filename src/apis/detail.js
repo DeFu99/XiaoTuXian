@@ -1,6 +1,6 @@
 import request from "@/untils/http";
 
-// 获取详情
+// 获取商品详情
 export const getDetailAPI = id => request({ url: "/goods", params: { id } });
 
 // 获取列表商品

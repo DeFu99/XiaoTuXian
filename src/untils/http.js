@@ -4,7 +4,7 @@ import "element-plus/theme-chalk/el-message.css";
 import { useUserStore } from "@/stores/user";
 import router from "@/router";
 
-// 创建axios实例
+// axios二次封装，创建axios实例
 const httpInstance = axios.create({
 	baseURL: "http://pcapi-xiaotuxian-front-devtest.itheima.net",
 	timeout: 5000,

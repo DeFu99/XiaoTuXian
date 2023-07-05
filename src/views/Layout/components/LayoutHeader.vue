@@ -19,12 +19,15 @@
 				<input type="text" placeholder="搜一搜" />
 			</div>
 			<!-- 头部购物车 -->
+			<HeaderCart></HeaderCart>
 		</div>
 	</header>
 </template>
 
 <script setup>
 	import { useCategoryStore } from "@/stores/category";
+	import HeaderCart from "./HeaderCart.vue";
+
 	// 列表数据
 	const categoryStore = useCategoryStore();
 </script>

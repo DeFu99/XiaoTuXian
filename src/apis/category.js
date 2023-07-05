@@ -9,8 +9,8 @@ export const getCategoryFilterAPI = id =>
 // 获取导航数据
 export const getSubCategoryAPI = data => {
 	return request({
-		url: "/category/goods/temporary",
 		method: "post",
+		url: "/category/goods/temporary",
 		data,
 	});
 };

@@ -34,6 +34,12 @@ const router = createRouter({
 					name: "detail",
 					component: () => import("@/views/Detail/index.vue"),
 				},
+				{
+					// 本地购物车列表
+					path: "carList",
+					name: "carList",
+					component: () => import("@/views/CarList/index.vue"),
+				},
 			],
 		},
 		// 一级路由：登录页
@@ -46,7 +52,7 @@ const router = createRouter({
 	// 路由滚动行为定制
 	scrollBehavior() {
 		return { top: 0 };
-	}
+	},
 });
 
 export default router;
