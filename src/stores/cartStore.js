@@ -28,12 +28,18 @@ export const useCartStore = defineStore(
 		const allCountPrice = computed(() =>
 			cartList.value.reduce((pre, current) => pre + current.count * current.price, 0)
 		);
+		// 单选功能
+		const singleCheck = (skuId, selected) => {
+			const item = cartList.value.find(item => item.skuId === skuId);
+			item.selected = selected;
+		};
 		return {
 			cartList,
 			addCart,
 			delCart,
 			allCount,
 			allCountPrice,
+			singleCheck,
 		};
 	},
 	{

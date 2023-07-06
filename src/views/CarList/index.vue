@@ -19,7 +19,11 @@
 					<tbody>
 						<tr v-for="i in cartStore.cartList" :key="i.id">
 							<td>
-								<el-checkbox />
+								<!-- 单选框 -->
+								<el-checkbox
+									:model="i.selected"
+									@change="selected => singleCheck(i, selected)"
+								/>
 							</td>
 							<td>
 								<div class="goods">
@@ -82,9 +86,14 @@
 </template>
 
 <script setup>
-	// const cartList = [];
 	import { useCartStore } from "@/stores/cartStore";
 	const cartStore = useCartStore();
+	// 单选框状态
+	const singleCheck = (i, selected) => {
+		console.log(i, selected);
+		// 使用pinia内的方法来修改
+		cartStore.singleCheck(i.skuId, selected);
+	};
 </script>
 
 <style scoped lang="scss">

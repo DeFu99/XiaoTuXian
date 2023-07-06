@@ -28,7 +28,7 @@
 	import { useCategoryStore } from "@/stores/category";
 	import HeaderCart from "./HeaderCart.vue";
 
-	// 列表数据
+	// 吸顶，头部导航栏列表（一级）
 	const categoryStore = useCategoryStore();
 </script>
 

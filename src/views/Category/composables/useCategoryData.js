@@ -4,7 +4,9 @@ import { onMounted, ref } from "vue";
 import { onBeforeRouteUpdate, useRoute } from "vue-router";
 
 export const useCategoryData = () => {
+
 	const categoryData = ref({});
+	
 	// 接收路由传来的参数
 	const route = useRoute();
 	// 默认id，之后路由参数变化，id变化
