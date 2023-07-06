@@ -6,7 +6,8 @@
 					<thead>
 						<tr>
 							<th width="120">
-								<el-checkbox />
+								<!-- 全选框 -->
+								<el-checkbox :model-value="cartStore.isAll" @change="allCheck" />
 							</th>
 							<th width="400">商品信息</th>
 							<th width="220">单价</th>
@@ -21,7 +22,7 @@
 							<td>
 								<!-- 单选框 -->
 								<el-checkbox
-									:model="i.selected"
+									:model-value="i.selected"
 									@change="selected => singleCheck(i, selected)"
 								/>
 							</td>
@@ -74,8 +75,10 @@
 			<!-- 操作栏 -->
 			<div class="action">
 				<div class="batch">
-					共 10 件商品，已选择 2 件，商品合计：
-					<span class="red">¥ 200.00 </span>
+					共 {{ cartStore.allCount }} 件商品，已选择
+					{{ cartStore.selectedCount }}
+					件，商品合计：
+					<span class="red">¥ {{ cartStore.selectedPrice }} </span>
 				</div>
 				<div class="total">
 					<el-button size="large" type="primary">下单结算</el-button>
@@ -90,10 +93,12 @@
 	const cartStore = useCartStore();
 	// 单选框状态
 	const singleCheck = (i, selected) => {
-		console.log(i, selected);
+		// console.log(i, selected);
 		// 使用pinia内的方法来修改
 		cartStore.singleCheck(i.skuId, selected);
 	};
+	// 点击全选 (一键全选)
+	const allCheck = selected => cartStore.allCheck(selected);
 </script>
 
 <style scoped lang="scss">

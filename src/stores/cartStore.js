@@ -22,17 +22,43 @@ export const useCartStore = defineStore(
 		};
 		// 计算购物车商品总数
 		const allCount = computed(() =>
-			cartList.value.reduce((pre, current) => pre + current.count, 0)
+			cartList.value.reduce((pre, current) => {
+				return pre + current.count;
+			}, 0)
 		);
 		// 计算购物车商品总价
 		const allCountPrice = computed(() =>
-			cartList.value.reduce((pre, current) => pre + current.count * current.price, 0)
+			cartList.value.reduce((pre, current) => {
+				return pre + current.count * current.price;
+			}, 0)
 		);
 		// 单选功能
 		const singleCheck = (skuId, selected) => {
 			const item = cartList.value.find(item => item.skuId === skuId);
 			item.selected = selected;
 		};
+		// 是否全选（单选点击后自动全选）
+		const isAll = computed(() => {
+			return cartList.value.every(item => item.selected);
+		});
+		// 点击全选 (一键全选)
+		const allCheck = selected => {
+			return cartList.value.forEach(item => {
+				return (item.selected = selected);
+			});
+		};
+		// 已选数量
+		const selectedCount = computed(() =>
+			cartList.value
+				.filter(item => item.selected)
+				.reduce((pre, current) => pre + current.count, 0)
+		);
+		// 已选数量价格合计
+		const selectedPrice = computed(() =>
+			cartList.value
+				.filter(item => item.selected)
+				.reduce((pre, current) => pre + current.count * current.price, 0)
+		);
 		return {
 			cartList,
 			addCart,
@@ -40,6 +66,10 @@ export const useCartStore = defineStore(
 			allCount,
 			allCountPrice,
 			singleCheck,
+			isAll,
+			allCheck,
+			selectedCount,
+			selectedPrice,
 		};
 	},
 	{
