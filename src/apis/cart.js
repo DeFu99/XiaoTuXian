@@ -21,3 +21,12 @@ export const delCartAPI = ids =>
 			ids,
 		},
 	});
+
+// 合并购物车
+export const mergeCartAPI = data => {
+	return request({
+		method: "post",
+		url: "/member/cart/merge",
+		data,
+	});
+};
