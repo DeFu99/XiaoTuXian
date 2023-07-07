@@ -45,7 +45,19 @@ const router = createRouter({
 					path:'checkout',
 					name:'checkout',
 					component: () => import('@/views/CheckOut/index.vue')
-				}
+				},
+				{
+					// 支付页
+					path:'pay',
+					name:'pay',
+					component: () => import('@/views/Pay/index.vue')
+				},
+				{
+					// 支付成功返回页面
+					path:'paycallback',
+					name:'paycallback',
+					component: () => import('@/views/Pay/PayBack.vue')
+				},
 			],
 		},
 		// 一级路由：登录页
