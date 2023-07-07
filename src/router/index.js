@@ -40,6 +40,12 @@ const router = createRouter({
 					name: "carList",
 					component: () => import("@/views/CarList/index.vue"),
 				},
+				{
+					// 订单结算
+					path:'checkout',
+					name:'checkout',
+					component: () => import('@/views/CheckOut/index.vue')
+				}
 			],
 		},
 		// 一级路由：登录页
