@@ -85,7 +85,7 @@ const router = createRouter({
 		{
 			path: "/login",
 			name: "login",
-			component: () => import("@/views/Login"),
+			component: () => import("@/views/Login/index.vue"),
 		},
 	],
 	// 路由滚动行为定制
