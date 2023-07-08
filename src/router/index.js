@@ -66,11 +66,13 @@ const router = createRouter({
 					// 三级路由
 					children: [
 						{
-							path: "user_info",
+							// 个人中心页
+							path: "",
 							name: "user_info",
 							component: () => import("@/views/Member/components/UserInfo.vue"),
 						},
 						{
+							// 订单页
 							path: "user_order",
 							name: "user_order",
 							component: () => import("@/views/Member/components/UserOrder.vue"),
