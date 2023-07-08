@@ -42,21 +42,40 @@ const router = createRouter({
 				},
 				{
 					// 订单结算
-					path:'checkout',
-					name:'checkout',
-					component: () => import('@/views/CheckOut/index.vue')
+					path: "checkout",
+					name: "checkout",
+					component: () => import("@/views/CheckOut/index.vue"),
 				},
 				{
 					// 支付页
-					path:'pay',
-					name:'pay',
-					component: () => import('@/views/Pay/index.vue')
+					path: "pay",
+					name: "pay",
+					component: () => import("@/views/Pay/index.vue"),
 				},
 				{
 					// 支付成功返回页面
-					path:'paycallback',
-					name:'paycallback',
-					component: () => import('@/views/Pay/PayBack.vue')
+					path: "paycallback",
+					name: "paycallback",
+					component: () => import("@/views/Pay/PayBack.vue"),
+				},
+				{
+					// 会员中心页
+					path: "member",
+					name: "member",
+					component: () => import("@/views/Member/index.vue"),
+					// 三级路由
+					children: [
+						{
+							path: "user_info",
+							name: "user_info",
+							component: () => import("@/views/Member/components/UserInfo.vue"),
+						},
+						{
+							path: "user_order",
+							name: "user_order",
+							component: () => import("@/views/Member/components/UserOrder.vue"),
+						},
+					],
 				},
 			],
 		},
@@ -64,7 +83,7 @@ const router = createRouter({
 		{
 			path: "/login",
 			name: "login",
-			component: () => import("@/views/Login/index.vue"),
+			component: () => import("@/views/Login"),
 		},
 	],
 	// 路由滚动行为定制
