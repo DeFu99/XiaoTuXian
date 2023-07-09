@@ -11,9 +11,7 @@ export const loginApi = ({ account, password }) =>
 export const getLikeListAPI = ({ limit = 4 }) => {
 	return request({
 		url: "/goods/relevant",
-		params: {
-			limit,
-		},
+		params: { limit },
 	});
 };
 
