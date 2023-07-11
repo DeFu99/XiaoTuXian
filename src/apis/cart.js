@@ -13,9 +13,9 @@ export const addCartAPI = ({ skuId, count }) =>
 export const findNewCartAPI = () => request({ url: "/member/cart" });
 
 // 删除购物车
-export const delCartAPI = ids =>	
+export const delCartAPI = ids =>
 	request({
-		method: "DELETE",
+		method: "delete ",
 		url: "/member/cart",
 		data: {
 			ids,

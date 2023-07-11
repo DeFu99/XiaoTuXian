@@ -10,6 +10,9 @@ import router from "./router";
 // 初始化样式
 import "@/styles/common.scss";
 
+// 引入弹框消息样式
+import "element-plus/theme-chalk/el-message.css";
+
 // 引入懒加载指令
 import { lazyPlugin } from "@/directives";
 

@@ -29,10 +29,10 @@
 							status-icon
 						>
 							<el-form-item label="账户" prop="account">
-								<el-input v-model="form.account" clearable />
+								<el-input v-model="form.account" />
 							</el-form-item>
 							<el-form-item label="密码" prop="password">
-								<el-input v-model="form.password" clearable />
+								<el-input v-model="form.password" show-password />
 							</el-form-item>
 							<el-form-item label-width="22px" prop="agree">
 								<el-checkbox size="large" v-model="form.agree">
@@ -67,7 +67,6 @@
 <script setup>
 	import { ref } from "vue";
 	import { ElMessage } from "element-plus";
-	import "element-plus/theme-chalk/el-message.css";
 	import { useRouter } from "vue-router";
 
 	import { useUserStore } from "@/stores/user";
@@ -75,8 +74,8 @@
 
 	// 准备表单数据对象
 	const form = ref({
-		account: "",
-		password: "",
+		account: "heima285",
+		password: "hm#qd@23!",
 		agree: false,
 	});
 	// 准备规则对象
@@ -105,7 +104,6 @@
 	const doLogin = () => {
 		const { account, password } = form.value;
 		formRef.value.validate(async valid => {
-			console.log(valid);
 			if (valid) {
 				// 执行表单登录逻辑
 				await userStore.getUserInfo({ account, password });
