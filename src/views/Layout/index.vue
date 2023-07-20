@@ -19,5 +19,4 @@
 	// 调取方法
 	const categoryStore = useCategoryStore();
 	onMounted(() => categoryStore.getCategory());
-	
 </script>

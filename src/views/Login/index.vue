@@ -39,7 +39,9 @@
 									我已同意隐私条款和服务条款
 								</el-checkbox>
 							</el-form-item>
-							<el-button size="large" class="subBtn" @click="doLogin">点击登录</el-button>
+							<el-button size="large" class="subBtn" @click="doLogin"
+								>点击登录</el-button
+							>
 						</el-form>
 					</div>
 				</div>
@@ -135,7 +137,8 @@
 				height: 132px;
 				width: 100%;
 				text-indent: -9999px;
-				background: url("@/assets/images/logo.png") no-repeat center 18px / contain;
+				background: url("@/assets/images/logo.png") no-repeat center 18px /
+					contain;
 			}
 		}
 

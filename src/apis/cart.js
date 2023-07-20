@@ -17,9 +17,7 @@ export const delCartAPI = ids =>
 	request({
 		method: "delete ",
 		url: "/member/cart",
-		data: {
-			ids,
-		},
+		data: { ids },
 	});
 
 // 合并购物车
