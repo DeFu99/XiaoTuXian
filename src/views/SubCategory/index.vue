@@ -18,7 +18,11 @@
 			</el-tabs>
 			<div class="body" v-infinite-scroll="load">
 				<!-- 商品列表-->
-				<GoodsItem v-for="good in goodList" :good="good" :key="good.id"></GoodsItem>
+				<GoodsItem
+					v-for="good in goodList"
+					:good="good"
+					:key="good.id"
+				></GoodsItem>
 			</div>
 		</div>
 	</div>
@@ -46,7 +50,7 @@
 		categoryId: route.params.id,
 		page: 1,
 		pageSize: 20,
-		sortField: "publishTime",
+		sortField: "orderNum",
 	});
 	const getGoodList = async () => {
 		const res = await getSubCategoryAPI(reqData.value);

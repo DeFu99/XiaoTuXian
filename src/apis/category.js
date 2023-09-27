@@ -11,6 +11,6 @@ export const getSubCategoryAPI = data => {
 	return request({
 		method: "post",
 		url: "/category/goods/temporary",
-		data,
+		data
 	});
 };

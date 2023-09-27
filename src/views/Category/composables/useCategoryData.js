@@ -6,7 +6,7 @@ import { onBeforeRouteUpdate, useRoute } from "vue-router";
 export const useCategoryData = () => {
 
 	const categoryData = ref({});
-	
+
 	// 接收路由传来的参数
 	const route = useRoute();
 	// 默认id，之后路由参数变化，id变化
@@ -16,6 +16,7 @@ export const useCategoryData = () => {
 		categoryData.value = res.result;
 	};
 	onMounted(() => getCategory());
+
 	// 路由参数变化时，重新调用获取商品的方法
 	onBeforeRouteUpdate(to => {
 		getCategory(to.params.id);

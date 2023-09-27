@@ -12,6 +12,7 @@
 				</RouterLink>
 			</div>
 		</header>
+
 		<section class="login-section">
 			<div class="wrapper">
 				<nav>
@@ -31,17 +32,20 @@
 							<el-form-item label="账户" prop="account">
 								<el-input v-model="form.account" />
 							</el-form-item>
+
 							<el-form-item label="密码" prop="password">
 								<el-input v-model="form.password" show-password />
 							</el-form-item>
+
 							<el-form-item label-width="22px" prop="agree">
 								<el-checkbox size="large" v-model="form.agree">
 									我已同意隐私条款和服务条款
 								</el-checkbox>
 							</el-form-item>
-							<el-button size="large" class="subBtn" @click="doLogin"
-								>点击登录</el-button
-							>
+
+							<el-button size="large" class="subBtn" @click="doLogin">
+								点击登录
+							</el-button>
 						</el-form>
 					</div>
 				</div>
@@ -80,6 +84,7 @@
 		password: "hm#qd@23!",
 		agree: false,
 	});
+
 	// 准备规则对象
 	const rules = ref({
 		account: { required: true, message: "用户名不能为空", trigger: "blur" },

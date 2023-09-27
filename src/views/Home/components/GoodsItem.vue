@@ -43,8 +43,9 @@
 		}
 
 		.desc {
-			color: #999;
 			height: 29px;
+			color: #999;
+			font-size: 14px;
 		}
 
 		.price {

@@ -10,14 +10,15 @@ const router = createRouter({
 			component: () => import("@/views/Layout/index.vue"),
 			// 二级路由
 			children: [
+				// 首页
 				{
-					// 首页
 					path: "",
 					name: "home",
 					component: () => import("@/views/Home/index.vue"),
 				},
+
+				// 导航分类
 				{
-					// 导航分类
 					path: "category/:id",
 					name: "category",
 					component: () => import("@/views/Category/index.vue"),
@@ -81,6 +82,7 @@ const router = createRouter({
 				},
 			],
 		},
+
 		// 一级路由：登录页
 		{
 			path: "/login",
